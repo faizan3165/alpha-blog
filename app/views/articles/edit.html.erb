@@ -1,10 +1,36 @@
-<h1>Editing article</h1>
+<h1>Edit Article</h1>
 
-<%= render "form", article: @article %>
+<% if @article.errors.any? %>
+  <h2>Resolve following errors first</h2>
+    <ul>    
+        <% @article.errors.full_messages.each do |msg| %>
+        <li>
+            <%= msg %>
+        </li>
+        <% end %>
+    </ul>
+<% end %>
 
-<br>
+<%= form_with(model: @article, local: true) do |f| %>
+  <div>
+    <%= f.label :title %>
+    <br/>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div>
+    <%= f.label :description %>
+    <br/>
+    <%= f.text_area :description %>
+  </div>
 
-<div>
-  <%= link_to "Show this article", @article %> |
-  <%= link_to "Back to articles", articles_path %>
-</div>
+  <div>
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+
+<p>
+  <%= link_to "All Articles", articles_path %>
+</p>
