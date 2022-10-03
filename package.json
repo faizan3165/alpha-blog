@@ -1,0 +1,13 @@
+{
+  "name": "alpha-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/faizan3165/alpha-blog.git",
+  "author": "Faizan Mehmood <faizanmehmood3165@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "4.4.1",
+    "jquery": "^3.6.1",
+    "popper.js": "^1.16.1"
+  }
+}
