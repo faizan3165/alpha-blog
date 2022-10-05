@@ -1,0 +1,21 @@
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+body {
+    background-color: rgba(237, 237, 237, 0.818)
+}
+
+.navbar-dark {
+    background-color: black !important;
+}
+
+.jumbotron {
+    margin-top: 25px;
+    background-image: url("https://images.unsplash.com/photo-1664876000829-4267236c8728?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    color: white;
+    height: 425px;
+}
