@@ -1,19 +1,58 @@
-<h1>Article Details</h1>
+<div class="container">
 
-<p>
-  <strong>Title: </strong>
-  <%= @article.title %>
-</p>
+  <h1 class="display-3 text-center mt-4">Article Details</h1>
 
-<p>
-  <strong>Description: </strong>
-  <%= @article.description %>
-</p>
+  <div class="row justify-content-md-center my-4">
+    <div class="col-8">
+      <div class="card text-center shadow rounded">
+        <div class="card-body">
 
-<div>
-  <%= link_to "Edit", edit_article_path(@article) %> | 
-  <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
-  <%= link_to "All Articles", articles_path %>
+          <h3 class="card-title display-6">
+            <%= @article.title%>
+          </h3>
 
+          <div class="card-subtitle mb-2 text-muted">
+            By Faizan Mehmood
+          </div>
+
+          <div class="card-text text-right lead">
+            <%= simple_format(@article.description) %>
+          </div>
+
+          <%= link_to "Edit", edit_article_path(@article), class: "text-warning card-link fw-bold btn btn-lg" %>
+
+          <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-danger card-link fw-bold btn btn-lg" %>
+        </div>
+
+        <div class="card-footer text-muted">
+          Created on:
+
+          <span class="fw-bold">
+            <%= @article.created_at.strftime("%Y/%m/%d") %>
+          </span>
+
+          at 
+
+          <span class="fw-bold">
+            <%= @article.created_at.strftime("%I:%M %p") %>
+          </span>
+
+          <div>
+            Edited on : 
+
+            <span class="fw-bold">
+              <%= @article.updated_at.strftime("%Y/%m/%d") %>
+            </span>
+
+            at
+
+            <span class="fw-bold">
+              <%= @article.updated_at.strftime("%I:%M %p") %>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
- 
