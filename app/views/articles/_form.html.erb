@@ -1,7 +1,7 @@
-<%= render "shared/errors" %>
+<%= render "shared/errors", obj: @article %>
 <div class="container">
   <div class="row justify-content-center">
-    <div class=""col-10>
+    <div class="col-10">
 
       <%= form_with(model: @article, local: true, class: "shadow-lg p-3 rounded mb-5 bg-dark text-white") do |f| %>
         <div class="form-group row my-4" >

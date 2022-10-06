@@ -5,7 +5,7 @@
 </svg>
 
 <div class="container">
-  <% if @article.errors.any? %>
+  <% if obj.errors.any? %>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
 
     <div class="err-container">
@@ -14,7 +14,7 @@
     </div>
 
       <ul>
-        <% @article.errors.full_messages.each do |msg| %>
+        <% obj.errors.full_messages.each do |msg| %>
 
           <li class="text-danger fw-bold">
             <%= msg %>
