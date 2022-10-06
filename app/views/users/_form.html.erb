@@ -19,7 +19,7 @@
             <%= f.email_field :email, class: "form-control" %>
           </div>
         </div>
-        
+
         <div class="form-group row my-4">
           <%= f.label :password, class: "col-2 col-form-label" %>
 
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group row my-4 justify-content-center">
-          <%= f.submit class: "btn btn-success btn-lg form-btn" %>
+          <%= f.submit(@user.new_record? ? "Sign Up" : "Update User", class: "btn btn-success btn-lg form-btn") %>
         </div>
 
       <% end %>
