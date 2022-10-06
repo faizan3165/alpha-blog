@@ -19,9 +19,11 @@
             <%= simple_format(@article.description) %>
           </div>
 
-          <%= link_to "Edit", edit_article_path(@article), class: "text-warning card-link fw-bold btn btn-lg" %>
+          <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
+            <%= link_to "Edit", edit_article_path(@article), class: "text-warning card-link fw-bold btn btn-lg" %>
 
-          <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-danger card-link fw-bold btn btn-lg" %>
+            <%= link_to "Delete", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-danger card-link fw-bold btn btn-lg" %>
+          <% end %>
         </div>
 
         <div class="card-footer text-muted">

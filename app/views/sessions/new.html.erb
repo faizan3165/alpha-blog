@@ -1,16 +1,10 @@
-<%= render "shared/errors", obj: @user %>
+<h1 class="display-4 text-center my-4">Login In</h1>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10">
 
-      <%= form_with(model: @user, local: true, class: "shadow-lg p-3 rounded mb-5 bg-dark text-white h-100") do |f| %>
-        <div class="form-group row my-4" >
-          <%= f.label :username, class: "col-2 col-form-label" %>
-
-          <div class="col-10 shadow rounded">
-            <%= f.text_field :username, class: "form-control" %>
-          </div>
-        </div>
+      <%= form_with(scope: :session, url: login_path, local: true, class: "shadow-lg p-3 rounded mb-5 bg-dark text-white h-100") do |f| %>
 
         <div class="form-group row my-4">
           <%= f.label :email, class: "col-2 col-form-label" %>
@@ -29,12 +23,12 @@
         </div>
 
         <div class="form-group row my-4 justify-content-center">
-          <%= f.submit(@user.new_record? ? "Sign Up" : "Update User", class: "btn btn-success btn-lg form-btn") %>
+          <%= f.submit "Log In", class: "btn btn-success btn-lg form-btn" %>
         </div>
 
       <% end %>
     </div>
 
-    <%= link_to "[ Cancel and return to Users Page ]", users_path, class: "mt-5" %>
+    <%= link_to "[ Cancel and return to Articles Page ]", articles_path, class: "mt-5" %>
   </div>
 </div>

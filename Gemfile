@@ -77,4 +77,6 @@ end
 
 gem "cssbundling-rails"
 
-gem 'momentjs-rails'
+gem "momentjs-rails"
+
+gem "will_paginate"
