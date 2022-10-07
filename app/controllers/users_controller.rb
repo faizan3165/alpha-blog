@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :requier_user, only: [:edit, :update]
-  before_action :require_same_user, only: [:edit, :update], :delete
+  before_action :require_same_user, only: [:edit, :update, :delete]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 2)
@@ -71,7 +71,7 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if current_user != @user && != current_user.admin?
+    if current_user != @user && current_user != current_user.admin?
       flash[:alert] = "You are not the current user or admin, hence are not allowed to perform this action"
 
       redirect_to @user
