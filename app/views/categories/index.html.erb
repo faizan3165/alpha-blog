@@ -1,0 +1,53 @@
+<h1 class="display-3 text-center">Categories</h1>
+
+<div class="flickr_pagination">
+  <div class="page_info">
+    <%= page_entries_info @categories %>
+  </div>
+</div>
+
+<% @categories.each do |category| %>
+  <div class="row justify-content-md-center my-4">
+    <div class="col-4">
+      <div class="card text-center shadow rounded">
+
+        <div class="card-body">
+          <h3 class="card-title display-6"><%= link_to category.name, category_path(category), class: "text-success" %></h3>
+        </div>
+
+        <div class="card-footer text-muted">
+          Created on:
+
+          <span class="fw-bold">
+            <%= category.created_at.strftime("%Y/%m/%d") %>
+          </span>
+
+          at 
+
+          <span class="fw-bold">
+            <%= category.created_at.strftime("%I:%M %p") %>
+          </span>
+
+          <div>
+            Edited on : 
+
+            <span class="fw-bold">
+              <%= category.updated_at.strftime("%Y/%m/%d") %>
+            </span>
+
+            at
+
+            <span class="fw-bold">
+              <%= category.updated_at.strftime("%I:%M %p") %>
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="flickr_pagination">
+  <%= will_paginate @categories, :container => false %>
+</div>
