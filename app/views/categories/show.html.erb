@@ -1,10 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="display-4 text-center">
+  <%= @category.name %>
+</h1>
 
-<%= render @category %>
+<% if logged_in? && current_user.admin? %>
+  <div class="text-center my-4">
+    <%= link_to "Edit Category", edit_category_path(@category), class: "btn btn-info btn-lg" %>
+  </div>
+<% end %>
 
-<div>
-  <%= link_to "Edit this category", edit_category_path(@category) %> |
-  <%= link_to "Back to categories", categories_path %>
+<h3 class="display-5 text-center my-4">User's Articles</h3>
 
-  <%= button_to "Destroy this category", @category, method: :delete %>
-</div>
+<%= render "articles/article" %>

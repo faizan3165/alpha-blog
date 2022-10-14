@@ -15,6 +15,10 @@
           <h3 class="card-title display-6"><%= link_to category.name, category_path(category), class: "text-success" %></h3>
         </div>
 
+        <p class="card-text">
+          <%= pluralize(category.articles.count, "article") %>
+        </p>
+
         <div class="card-footer text-muted">
           Created on:
 
